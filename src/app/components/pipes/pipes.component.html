@@ -1,0 +1,20 @@
+<h4>String Pipes</h4>
+<h5>{{ stringPipes }}</h5>
+<h5>{{ stringPipes | lowercase }}</h5>
+<h5>{{ stringPipes | uppercase }}</h5>
+<h5>{{ stringPipes | titlecase }}</h5>
+<h5>{{ stringPipes | slice: 3:5 }}</h5>
+<h5>{{ jsonObj | json }}</h5>
+<hr />
+
+<h4>Number Pipes</h4>
+<h5>{{ 5.678 | number: '1.2-3' }}</h5>
+<h5>{{ 5.678 | number: '3.4-5' }}</h5>
+<h5>{{ 5.678 | number: '3.1-2' }}</h5>
+<h5>{{ 0.25 | percent }}</h5>
+<h5>{{ 0.25 | currency }}</h5>
+<h5>{{ 0.25 | currency: 'GBP':'code' }}</h5>
+<h5>{{ date | date }}</h5>
+<h5>{{ date | date: 'short' }}</h5>
+<h5>{{ date | date: 'shortDate' }}</h5>
+<h5>{{ date | date: 'shortTime' }}</h5>

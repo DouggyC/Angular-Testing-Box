@@ -1,0 +1,50 @@
+<!-- Property binding -->
+<h2>Welcome {{ name }}</h2>
+<input [id]="hello" type="text" value="Property" />
+<input id="{{ hello }}" type="text" value="Binding" />
+<input bind-id="isHello" type="text" value="bind-" />
+
+<!-- Inline conditional render -->
+<!-- ngIf -->
+<h2 *ngIf="inlineTrue; else elseBlock">
+  If block
+</h2>
+<ng-template #elseBlock>
+  <h2>
+    else block
+  </h2>
+</ng-template>
+
+<div *ngIf="thenBlock; then block1; else block2"></div>
+
+<ng-template #block1>
+  <h2>then block1</h2>
+</ng-template>
+<ng-template #block2>
+  <h2>else block2</h2>
+</ng-template>
+
+<!-- ngSwitch -->
+<div [ngSwitch]="color">
+  <div *ngSwitchCase="'red'">Red</div>
+  <div *ngSwitchCase="'blue'">Blue</div>
+  <div *ngSwitchCase="'green'">Green</div>
+  <div *ngSwitchDefault>Default</div>
+</div>
+
+<!-- ngFor -->
+<div
+  *ngFor="
+    let color of colors;
+    index as i;
+    first as f;
+    last as l;
+    odd as o;
+    even as e
+  "
+>
+  <h2>
+    Index: {{ i }} {{ color }} First: {{ f }} Last: {{ l }} Odd: {{ o }} Even:
+    {{ e }}
+  </h2>
+</div>

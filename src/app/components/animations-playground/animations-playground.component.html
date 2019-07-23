@@ -1,0 +1,24 @@
+<div [@popOverState]="stateName">
+  <img
+    src="https://source.unsplash.com/random"
+    style="width:100px; height:50px;"
+    [@photoState]="position"
+    (@photoState.start)="logAnimation($event)"
+  />
+  <!-- animation callback -->
+  <p>Hello! I'm a helpful message</p>
+</div>
+<button (click)="toggle()">Toggle PopOver</button>
+<hr />
+
+<button (click)="changePosition('move')">Translate</button>
+<button (click)="changePosition('spin')">Rotate</button>
+<button (click)="changePosition('enlarge')">Scale</button>
+<button (click)="changePosition('null')">Reset</button>
+
+<hr />
+<div [@photosAnimation]="photos.length">
+  <div *ngFor="let photo of photos">
+    <img [src]="photo" style="width:300px; height:200px;" />
+  </div>
+</div>
